@@ -2,6 +2,7 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import Image from 'react-bootstrap/Image';
 import Moment from 'react-moment';
+import { Link } from "react-router";
 
 export const Contact = () => {
   const notices = [
@@ -165,18 +166,15 @@ export const Contact = () => {
           </tr>
         </thead>
         <tbody>
-          {
-            notices.map((notice,index)=>{
-              return(
+          {notices.map((data,index)=> ( 
                 <tr>
                   <td>{index+1}</td>
-                  <td>{notice.title}{notice.new==1?<Image src="https://gpa.ac.in/new.gif"></Image>:""}</td>
-                  <td><a href="https://gpa.ac.in/admin/uploads/${notice.notice}">Notice</a></td>
-                  <td><Moment>{notice.date}</Moment></td>            
+                  <td>{data.title}{data.new==1?<Image src="https://gpa.ac.in/new.gif"></Image>:""}</td>
+                  <td><Link to={"https://gpa.ac.in/admin/uploads/" + data.notice}>Notice</Link></td>
+                  <td><Moment format="YYYY/MM/DD">{data.date}</Moment></td>            
                 </tr>
-              )
-            })
-          }
+            
+          ))}
         </tbody>
       </Table>
     </div>
