@@ -172,8 +172,7 @@ export const Contact = () => {
                   <td>{data.title}{data.new==1?<Image src="https://gpa.ac.in/new.gif"></Image>:""}</td>
                   <td><Link to={"https://gpa.ac.in/admin/uploads/" + data.notice}>Notice</Link></td>
                   <td><Moment format="YYYY/MM/DD">{data.date}</Moment></td>            
-                </tr>
-            
+                </tr> 
           ))}
         </tbody>
       </Table>
